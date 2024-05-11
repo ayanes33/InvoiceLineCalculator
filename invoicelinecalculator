@@ -18,7 +18,7 @@ def get_quantity():
         except ValueError:
             print("Invalid input. Please enter a valid quantity.")
 
-def compute_total(price, quantity):
+def calculate_total(price, quantity):
     return price * quantity
 
 def main():
@@ -27,12 +27,13 @@ def main():
         price = get_price()
         quantity = get_quantity()
         total = calculate_total(price, quantity)
-        print("PRICE: ${price:.2f}")
-        print("QUANTITY: ${quantity:.2f}")
-        print("TOTAL: ${total:.2f}")
+        print(f"PRICE: ${price:.2f}")
+        print(f"QUANTITY: ${quantity:.2f}")
+        print(f"TOTAL: ${total:.2f}")
         choice = input("Enter another line item? (y/n): ").strip().lower()
         if choice.lower() != 'y':
             break
     print("Thank You for using INvoice Line Item Calculator!")
 
-main()
+if __name__ == "__main__":
+    main()
